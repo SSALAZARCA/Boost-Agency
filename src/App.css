@@ -1,0 +1,5 @@
+/* App specific styles if needed, otherwise rely on index.css */
+.app-container {
+  width: 100%;
+  max-width: 100vw;
+}
