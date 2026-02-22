@@ -76,8 +76,31 @@ const Header = () => {
                     smooth
                     style={{ textDecoration: 'none' }}
                 >
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', zIndex: 1001 }}>
-                        {settings.brandName}
+                    {/* Monograma BA. */}
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'baseline',
+                        gap: '0',
+                        lineHeight: 1,
+                        userSelect: 'none',
+                    }}>
+                        <span style={{
+                            fontFamily: 'var(--font-heading)',
+                            fontStretch: 'normal',
+                            fontSize: '2.2rem',
+                            fontWeight: 700,
+                            fontStyle: 'normal',
+                            color: '#2E3192',
+                            letterSpacing: '-0.02em',
+                        }}>BA</span>
+                        <span style={{
+                            fontFamily: 'var(--font-heading)',
+                            fontSize: '2.2rem',
+                            fontWeight: 700,
+                            color: '#FDFD88',
+                            lineHeight: 1,
+                            textShadow: '0 1px 4px rgba(0,0,0,0.15)',
+                        }}>.</span>
                     </div>
                 </HashLink>
 
