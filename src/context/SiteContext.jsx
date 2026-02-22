@@ -9,7 +9,9 @@ export const SiteProvider = ({ children }) => {
         instagram: '',
         whatsapp: '',
         email: '',
-        brandName: 'BOOST AGENCY'
+        brandName: 'BOOST AGENCY',
+        mision: '',
+        vision: ''
     });
 
     const [leads, setLeads] = useState([]);
@@ -34,7 +36,9 @@ export const SiteProvider = ({ children }) => {
                     instagram: sData.instagram,
                     whatsapp: sData.whatsapp,
                     email: sData.email,
-                    brandName: sData.brand_name
+                    brandName: sData.brand_name,
+                    mision: sData.mision || '',
+                    vision: sData.vision || ''
                 });
 
                 setLeads(lData);

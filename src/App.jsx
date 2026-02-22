@@ -11,6 +11,7 @@ import PromiseSection from './components/PromiseSection';
 import MethodologySection from './components/MethodologySection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import MisionVisionSection from './components/MisionVisionSection';
 import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -38,6 +39,7 @@ function App() {
                   <Hero />
                   <AboutSection />
                   <ServicesSection />
+                  <MisionVisionSection />
                   <PortfolioSection />
                   <AudienceSection />
                   <IdentitySection />

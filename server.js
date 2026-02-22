@@ -35,7 +35,9 @@ let db;
                 instagram TEXT,
                 whatsapp TEXT,
                 email TEXT,
-                brand_name TEXT
+                brand_name TEXT,
+                mision TEXT,
+                vision TEXT
             );
 
             CREATE TABLE IF NOT EXISTS leads (
@@ -63,9 +65,21 @@ let db;
             );
 
             -- Initial Settings
-            INSERT OR IGNORE INTO settings (id, instagram, whatsapp, email, brand_name) 
-            VALUES ('global', 'https://instagram.com/boost', '+1 234 567 890', 'hi@boost.agency', 'BOOST AGENCY');
+            INSERT OR IGNORE INTO settings (id, instagram, whatsapp, email, brand_name, mision, vision) 
+            VALUES ('global', 'https://instagram.com/boost', '+1 234 567 890', 'hi@boost.agency', 'BOOST AGENCY',
+                'Impulsar el crecimiento de marcas con estrategia digital y experiencias de marca memorables que generen posicionamiento sólido y resultados medibles.',
+                'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.');
         `);
+
+        // Migración automática para bases de datos existentes
+        try { await db.exec(`ALTER TABLE settings ADD COLUMN mision TEXT`); } catch (e) { }
+        try { await db.exec(`ALTER TABLE settings ADD COLUMN vision TEXT`); } catch (e) { }
+        // Rellenar valores vacíos en registros existentes
+        await db.run(`UPDATE settings SET
+            mision = COALESCE(mision, 'Impulsar el crecimiento de marcas con estrategia digital y experiencias de marca memorables que generen posicionamiento sólido y resultados medibles.'),
+            vision = COALESCE(vision, 'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.')
+            WHERE id = 'global'`);
+
         console.log('Database initialized successfully');
     } catch (err) {
         console.error('Database initialization error:', err);
@@ -84,10 +98,10 @@ app.get('/api/settings', async (req, res) => {
 
 app.post('/api/settings', async (req, res) => {
     try {
-        const { instagram, whatsapp, email, brandName } = req.body;
+        const { instagram, whatsapp, email, brandName, mision, vision } = req.body;
         await db.run(
-            'UPDATE settings SET instagram = ?, whatsapp = ?, email = ?, brand_name = ? WHERE id = "global"',
-            [instagram, whatsapp, email, brandName]
+            'UPDATE settings SET instagram = ?, whatsapp = ?, email = ?, brand_name = ?, mision = ?, vision = ? WHERE id = "global"',
+            [instagram, whatsapp, email, brandName, mision, vision]
         );
         res.json({ success: true });
     } catch (err) {

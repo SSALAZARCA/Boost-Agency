@@ -434,9 +434,45 @@ const AdminDashboard = () => {
                                     style={inputStyleAdmin}
                                 />
                             </div>
+
+                            {/* Separador */}
+                            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem' }}>
+                                <p style={{ color: '#FDFD88', fontWeight: 700, marginBottom: '1.5rem', fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                                    🎯 Misión y Visión
+                                </p>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                    <div>
+                                        <label style={{ display: 'block', color: '#8892b0', marginBottom: '0.5rem' }}>Misión</label>
+                                        <textarea
+                                            rows={4}
+                                            placeholder="Describe la misión de tu agencia..."
+                                            value={tempSettings.mision || ''}
+                                            onChange={(e) => setTempSettings({ ...tempSettings, mision: e.target.value })}
+                                            style={{ ...inputStyleAdmin, resize: 'vertical', lineHeight: 1.6 }}
+                                        />
+                                        <p style={{ color: '#687898', fontSize: '0.75rem', marginTop: '0.4rem' }}>
+                                            Texto que aparece en la tarjeta "Misión" de la web.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <label style={{ display: 'block', color: '#8892b0', marginBottom: '0.5rem' }}>Visión</label>
+                                        <textarea
+                                            rows={4}
+                                            placeholder="Describe la visión de tu agencia..."
+                                            value={tempSettings.vision || ''}
+                                            onChange={(e) => setTempSettings({ ...tempSettings, vision: e.target.value })}
+                                            style={{ ...inputStyleAdmin, resize: 'vertical', lineHeight: 1.6 }}
+                                        />
+                                        <p style={{ color: '#687898', fontSize: '0.75rem', marginTop: '0.4rem' }}>
+                                            Texto que aparece en la tarjeta "Visión" de la web.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button
                                 onClick={handleSaveSettings}
-                                style={{ padding: '1rem', background: '#ffbd69', border: 'none', borderRadius: '8px', color: '#000', fontWeight: 'bold', marginTop: '1rem', cursor: 'pointer' }}
+                                style={{ padding: '1rem', background: '#FDFD88', border: 'none', borderRadius: '8px', color: '#000', fontWeight: 'bold', marginTop: '1rem', cursor: 'pointer' }}
                             >
                                 Sincronizar Cambios Globales
                             </button>
