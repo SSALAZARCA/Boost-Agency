@@ -31,10 +31,10 @@ const Header = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '0 5%',
-        backgroundColor: 'rgba(244, 241, 234, 0.95)',
+        backgroundColor: 'rgba(241, 238, 230, 0.97)',
         backdropFilter: 'blur(10px)',
         zIndex: 1000,
-        borderBottom: '1px solid rgba(10, 25, 47, 0.05)',
+        borderBottom: '1px solid rgba(46, 49, 146, 0.08)',
     };
 
     const menuOverlayStyle = {
@@ -43,7 +43,7 @@ const Header = () => {
         left: 0,
         width: '100vw',
         height: '100vh',
-        backgroundColor: 'var(--color-primary)',
+        backgroundColor: '#2E3192',
         zIndex: 999,
         display: 'flex',
         flexDirection: 'column',

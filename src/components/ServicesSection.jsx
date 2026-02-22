@@ -38,7 +38,7 @@ const ServiceCard = ({ title, items, delay }) => {
             onMouseEnter={() => setHover(true)}
             onMouseLeave={handleMouseLeave}
             style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.7)', // Glass base
+                backgroundColor: 'rgba(255, 255, 255, 0.85)', // Glass base
                 backdropFilter: 'blur(10px)',
                 padding: '3rem',
                 borderRadius: '16px',
@@ -70,7 +70,7 @@ const ServiceCard = ({ title, items, delay }) => {
                 </h4>
                 <ul style={{ listStyle: 'none', flex: 1 }}>
                     {items.map((item, index) => (
-                        <li key={index} style={{ marginBottom: '1rem', fontSize: '1.05rem', color: '#444', display: 'flex', alignItems: 'center' }}>
+                        <li key={index} style={{ marginBottom: '1rem', fontSize: '1.05rem', color: '#0E2841', display: 'flex', alignItems: 'center' }}>
                             <span style={{ color: 'var(--color-accent)', marginRight: '0.5rem', fontSize: '0.8rem' }}>●</span>
                             {item}
                         </li>
@@ -93,8 +93,8 @@ const ServicesSection = () => {
     ];
 
     return (
-        <Section id="servicios" title="Estructura de Servicios" bgColor="#f0f4f8" alignment="center">
-            <p style={{ maxWidth: '800px', margin: '0 auto 4rem auto', textAlign: 'center', fontSize: '1.2rem', color: '#555' }}>
+        <Section id="servicios" title="Estructura de Servicios" bgColor="var(--color-secondary)" alignment="center">
+            <p style={{ maxWidth: '800px', margin: '0 auto 4rem auto', textAlign: 'center', fontSize: '1.2rem', color: 'var(--color-accent)' }}>
                 BOOST AGENCY integra estrategia digital y experiencias presenciales bajo una misma dirección estratégica.
             </p>
 

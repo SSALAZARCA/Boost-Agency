@@ -66,7 +66,7 @@ const Hero = () => {
             <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to bottom, rgba(10,25,47,0.72) 0%, rgba(10,25,47,0.55) 60%, rgba(10,25,47,0.80) 100%)',
+                background: 'linear-gradient(to bottom, rgba(14,40,65,0.75) 0%, rgba(46,49,146,0.45) 60%, rgba(14,40,65,0.82) 100%)',
                 zIndex: 1,
             }} />
 
