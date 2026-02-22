@@ -58,7 +58,7 @@ const ContactSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--font-heading)', marginBottom: '2rem' }}
                     >
-                        Hablemos del <span style={{ color: '#ffbd69' }}>próximo nivel</span>.
+                        Hablemos del próximo nivel.
                     </motion.h2>
                     <p style={{ fontSize: '1.2rem', color: '#ccc', marginBottom: '3rem', lineHeight: 1.6 }}>
                         ¿Buscas un socio estratégico para tu marca? Cuéntanos tu visión y diseñemos juntos el camino al éxito.
