@@ -39,26 +39,7 @@ const IdentitySection = () => {
                 ))}
             </div>
 
-            {/* Tone & Voice */}
-            <div style={{ backgroundColor: 'white', padding: '3rem', borderRadius: '4px', boxShadow: '0 4px 30px rgba(0,0,0,0.03)', maxWidth: '900px' }}>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>Tono y Voz</h3>
-                <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
-                    Seguro, Directo, Elegante, Estratégico, Orientado a negocio.
-                </p>
-                <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    Comunicamos con precisión estratégica y visión empresarial. Lenguaje profesional y claro.
-                </p>
-                <blockquote style={{
-                    fontSize: '1.5rem',
-                    fontFamily: 'var(--font-heading)',
-                    color: 'var(--color-primary)',
-                    borderLeft: '4px solid var(--color-accent)',
-                    paddingLeft: '1.5rem',
-                    margin: '0'
-                }}>
-                    "No prometemos ruido. Construimos posicionamiento."
-                </blockquote>
-            </div>
+
 
         </Section>
     );
