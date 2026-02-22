@@ -71,7 +71,14 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <div style={{ fontSize: '0.8rem', color: '#8892b0', textTransform: 'uppercase', letterSpacing: '1px' }}>WhatsApp</div>
-                                <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>{settings.whatsapp}</div>
+                                <a
+                                    href={`https://wa.me/${settings.whatsapp.replace(/\D/g, '')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold', textDecoration: 'none' }}
+                                >
+                                    {settings.whatsapp}
+                                </a>
                             </div>
                         </div>
 
