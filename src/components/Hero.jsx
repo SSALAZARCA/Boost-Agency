@@ -79,7 +79,7 @@ const Hero = () => {
                     style={{
                         fontSize: 'clamp(3rem, 12vw, 9.5rem)',
                         fontFamily: 'var(--font-heading)',
-                        color: 'var(--color-secondary)',
+                        color: 'var(--color-highlight)',
                         lineHeight: 0.85,
                         marginBottom: '2rem',
                         letterSpacing: '-0.04em',
