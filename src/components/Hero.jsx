@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NavHashLink as HashLink } from 'react-router-hash-link';
 
 const slides = [
-    { src: '/slider/slide1.jpeg' },
-    { src: '/slider/slide2.jpeg' },
+    { src: '/slider/slide1.webp' },
+    { src: '/slider/slide2.webp' },
 ];
 
 const Hero = () => {
