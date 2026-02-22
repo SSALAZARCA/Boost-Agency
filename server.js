@@ -98,13 +98,24 @@ app.get('/api/settings', async (req, res) => {
 
 app.post('/api/settings', async (req, res) => {
     try {
-        const { instagram, whatsapp, email, brandName, mision, vision } = req.body;
+        const { instagram, whatsapp, email, brandName, brand_name, mision, vision } = req.body;
+        const finalBrandName = brandName || brand_name;
+
+        console.log('Update Settings request received:', { instagram, whatsapp, email, finalBrandName, mision, vision });
+
+        if (!finalBrandName) {
+            console.warn('Update Settings: brandName is missing');
+        }
+
         await db.run(
             'UPDATE settings SET instagram = ?, whatsapp = ?, email = ?, brand_name = ?, mision = ?, vision = ? WHERE id = "global"',
-            [instagram, whatsapp, email, brandName, mision, vision]
+            [instagram, whatsapp, email, finalBrandName, mision, vision]
         );
+
+        console.log('Settings updated in database successfully');
         res.json({ success: true });
     } catch (err) {
+        console.error('CRITICAL: Error updating settings:', err.message);
         res.status(500).json({ error: err.message });
     }
 });

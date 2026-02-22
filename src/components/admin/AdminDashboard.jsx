@@ -8,6 +8,7 @@ const AdminDashboard = () => {
 
     // Local state for settings form
     const [tempSettings, setTempSettings] = useState(settings);
+    const [isSaving, setIsSaving] = useState(false);
 
     // Local state for new project form
     const [newProject, setNewProject] = useState({
@@ -39,9 +40,16 @@ const AdminDashboard = () => {
         alert('Proyecto publicado con éxito');
     };
 
-    const handleSaveSettings = () => {
-        updateSettings(tempSettings);
-        alert('Configuración actualizada globalmente');
+    const handleSaveSettings = async () => {
+        setIsSaving(true);
+        const success = await updateSettings(tempSettings);
+        setIsSaving(false);
+
+        if (success) {
+            alert('✅ Configuración sincronizada con éxito');
+        } else {
+            alert('❌ Error al sincronizar. Por favor verifica la conexión con el servidor.');
+        }
     };
 
     const inputStyleAdmin = {
@@ -472,9 +480,20 @@ const AdminDashboard = () => {
 
                             <button
                                 onClick={handleSaveSettings}
-                                style={{ padding: '1rem', background: '#FDFD88', border: 'none', borderRadius: '8px', color: '#000', fontWeight: 'bold', marginTop: '1rem', cursor: 'pointer' }}
+                                disabled={isSaving}
+                                style={{
+                                    padding: '1rem',
+                                    background: isSaving ? '#444' : '#FDFD88',
+                                    border: 'none',
+                                    borderRadius: '8px',
+                                    color: isSaving ? '#888' : '#000',
+                                    fontWeight: 'bold',
+                                    marginTop: '1rem',
+                                    cursor: isSaving ? 'not-allowed' : 'pointer',
+                                    transition: '0.3s'
+                                }}
                             >
-                                Sincronizar Cambios Globales
+                                {isSaving ? 'Sincronizando...' : 'Sincronizar Cambios Globales'}
                             </button>
                         </div>
                     </div>

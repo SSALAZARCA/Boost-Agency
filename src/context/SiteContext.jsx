@@ -54,14 +54,19 @@ export const SiteProvider = ({ children }) => {
 
     const updateSettings = async (newSettings) => {
         try {
-            await fetch(`${API_URL}/settings`, {
+            const res = await fetch(`${API_URL}/settings`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newSettings)
             });
+
+            if (!res.ok) throw new Error('Failed to update settings on server');
+
             setSettings(newSettings);
+            return true;
         } catch (err) {
             console.error("Error updating settings:", err);
+            return false;
         }
     };
 
