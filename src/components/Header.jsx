@@ -77,36 +77,16 @@ const Header = () => {
                     style={{ textDecoration: 'none' }}
                 >
                     {/* Logo circular Boost Agency */}
-                    <svg
-                        width="64"
-                        height="64"
-                        viewBox="0 0 100 100"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style={{ display: 'block', overflow: 'visible' }}
-                    >
-                        {/* Círculo beige */}
-                        <circle cx="50" cy="50" r="48" fill="#F1EEE6" />
-
-                        {/* Texto agrupado para control de interlineado más fino */}
-                        <g style={{ fontFamily: "'Noto Serif Display', Georgia, serif", fill: '#2E3192', textAnchor: 'middle' }}>
-                            {/* "Boost" - serif bold */}
-                            <text
-                                x="50"
-                                y="45"
-                                fontSize="30"
-                                fontWeight="700"
-                            >Boost</text>
-
-                            {/* "Agency" - serif italic */}
-                            <text
-                                x="50"
-                                y="68"
-                                fontSize="28"
-                                fontWeight="400"
-                                fontStyle="italic"
-                            >Agency</text>
-                        </g>
-                    </svg>
+                    <img
+                        src="/logo-boost-agency.svg"
+                        alt="Boost Agency Logo"
+                        style={{
+                            width: '64px',
+                            height: '64px',
+                            display: 'block',
+                            objectFit: 'contain'
+                        }}
+                    />
                 </HashLink>
 
                 <button

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <!-- Círculo beige -->
+  <circle cx="50" cy="50" r="48" fill="#F1EEE6" />
+  
+  <!-- Texto "Boost Agency" con distribución exacta según referencia -->
+  <text
+    x="50"
+    y="44"
+    font-family="'Noto Serif Display', Georgia, serif"
+    font-size="32"
+    font-weight="700"
+    fill="#2E3192"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >Boost</text>
+  
+  <text
+    x="50"
+    y="68"
+    font-family="'Noto Serif Display', Georgia, serif"
+    font-size="30"
+    font-weight="400"
+    font-style="italic"
+    fill="#2E3192"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >Agency</text>
+</svg>
