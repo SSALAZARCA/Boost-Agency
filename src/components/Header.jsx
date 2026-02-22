@@ -78,34 +78,33 @@ const Header = () => {
                 >
                     {/* Logo circular Boost Agency */}
                     <svg
-                        width="58"
-                        height="58"
+                        width="64"
+                        height="64"
                         viewBox="0 0 100 100"
                         xmlns="http://www.w3.org/2000/svg"
-                        style={{ display: 'block' }}
+                        style={{ display: 'block', overflow: 'visible' }}
                     >
-                        {/* Sombra sutil */}
-                        <circle cx="50" cy="52" r="44" fill="rgba(14,40,65,0.12)" />
-                        {/* Círculo beige */}
-                        <circle cx="50" cy="50" r="44" fill="#F1EEE6" />
+                        {/* Círculo beige - Limpio y centrado según referencia */}
+                        <circle cx="50" cy="50" r="48" fill="#F1EEE6" />
+
                         {/* "Boost" - serif bold */}
                         <text
                             x="50"
-                            y="43"
+                            y="41"
                             fontFamily="'Noto Serif Display', Georgia, serif"
-                            fontSize="26"
+                            fontSize="28"
                             fontWeight="700"
-                            fontStyle="normal"
                             fill="#2E3192"
                             textAnchor="middle"
                             dominantBaseline="middle"
                         >Boost</text>
+
                         {/* "Agency" - serif italic */}
                         <text
                             x="50"
-                            y="65"
+                            y="63"
                             fontFamily="'Noto Serif Display', Georgia, serif"
-                            fontSize="24"
+                            fontSize="26"
                             fontWeight="400"
                             fontStyle="italic"
                             fill="#2E3192"
