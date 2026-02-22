@@ -24,8 +24,12 @@
   /* White - limpieza */
   --color-white: #ffffff;
 
-  /* Typography */
+  /* Typography - Sistema oficial Boost Agency */
+  /* Titulares: Noto Serif Display Extracondensed - autoridad e impacto institucional */
   --font-heading: 'Noto Serif Display', serif;
+  --font-heading-stretch: extra-condensed;
+  /* Activar la variante extracondensada */
+  /* Cuerpo: Open Sans - limpieza y funcionalidad digital */
   --font-body: 'Open Sans', sans-serif;
 
   /* Spacing */

@@ -42,7 +42,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  line-height: 1.2;
+  font-stretch: extra-condensed;
+  /* Activa la variante Extracondensed de Noto Serif Display */
+  line-height: 1.1;
   font-weight: 700;
   color: inherit;
 }
