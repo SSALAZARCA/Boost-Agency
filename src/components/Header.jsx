@@ -31,10 +31,10 @@ const Header = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '0 5%',
-        backgroundColor: 'rgba(241, 238, 230, 0.97)',
+        backgroundColor: 'rgba(14, 40, 65, 0.97)',
         backdropFilter: 'blur(10px)',
         zIndex: 1000,
-        borderBottom: '1px solid rgba(46, 49, 146, 0.08)',
+        borderBottom: '1px solid rgba(253,253,136,0.15)',
     };
 
     const menuOverlayStyle = {
@@ -125,9 +125,9 @@ const Header = () => {
                         padding: '1rem'
                     }}
                 >
-                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : 'var(--color-primary)', marginBottom: '5px', transition: '0.3s' }}></div>
-                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : 'var(--color-primary)', marginBottom: '5px', opacity: menuOpen ? 0 : 1, transition: '0.3s' }}></div>
-                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : 'var(--color-primary)', transition: '0.3s' }}></div>
+                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : '#F1EEE6', marginBottom: '5px', transition: '0.3s' }}></div>
+                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : '#F1EEE6', marginBottom: '5px', opacity: menuOpen ? 0 : 1, transition: '0.3s' }}></div>
+                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : '#F1EEE6', transition: '0.3s' }}></div>
                 </button>
             </motion.header>
 
