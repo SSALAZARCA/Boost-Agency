@@ -76,32 +76,43 @@ const Header = () => {
                     smooth
                     style={{ textDecoration: 'none' }}
                 >
-                    {/* Monograma BA. */}
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'baseline',
-                        gap: '0',
-                        lineHeight: 1,
-                        userSelect: 'none',
-                    }}>
-                        <span style={{
-                            fontFamily: 'var(--font-heading)',
-                            fontStretch: 'normal',
-                            fontSize: '2.2rem',
-                            fontWeight: 700,
-                            fontStyle: 'normal',
-                            color: '#2E3192',
-                            letterSpacing: '-0.02em',
-                        }}>BA</span>
-                        <span style={{
-                            fontFamily: 'var(--font-heading)',
-                            fontSize: '2.2rem',
-                            fontWeight: 700,
-                            color: '#FDFD88',
-                            lineHeight: 1,
-                            textShadow: '0 1px 4px rgba(0,0,0,0.15)',
-                        }}>.</span>
-                    </div>
+                    {/* Logo circular Boost Agency */}
+                    <svg
+                        width="58"
+                        height="58"
+                        viewBox="0 0 100 100"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{ display: 'block' }}
+                    >
+                        {/* Sombra sutil */}
+                        <circle cx="50" cy="52" r="44" fill="rgba(14,40,65,0.12)" />
+                        {/* Círculo beige */}
+                        <circle cx="50" cy="50" r="44" fill="#F1EEE6" />
+                        {/* "Boost" - serif bold */}
+                        <text
+                            x="50"
+                            y="43"
+                            fontFamily="'Noto Serif Display', Georgia, serif"
+                            fontSize="26"
+                            fontWeight="700"
+                            fontStyle="normal"
+                            fill="#2E3192"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                        >Boost</text>
+                        {/* "Agency" - serif italic */}
+                        <text
+                            x="50"
+                            y="65"
+                            fontFamily="'Noto Serif Display', Georgia, serif"
+                            fontSize="24"
+                            fontWeight="400"
+                            fontStyle="italic"
+                            fill="#2E3192"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                        >Agency</text>
+                    </svg>
                 </HashLink>
 
                 <button
