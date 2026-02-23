@@ -1,14 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" width="100" height="60">
-  <!-- Sin círculo, fondo transparente para heredar el color del header -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" width="160" height="100">
+  <!-- Fondo transparente — hereda el color del header -->
+  
+  <!-- "B" grande -->
   <text
-    x="50"
-    y="45"
-    font-family="'Noto Serif Display', Georgia, serif"
-    font-size="48"
-    font-weight="700"
+    x="10"
+    y="90"
+    font-family="'Noto Serif Display', Georgia, 'Times New Roman', serif"
+    font-size="100"
+    font-weight="400"
     fill="#F1EEE6"
-    text-anchor="middle"
-    dominant-baseline="middle"
-    letter-spacing="-1"
-  >BA.</text>
+    dominant-baseline="auto"
+    letter-spacing="0"
+  >B</text>
+
+  <!-- "A" grande -->
+  <text
+    x="72"
+    y="90"
+    font-family="'Noto Serif Display', Georgia, 'Times New Roman', serif"
+    font-size="100"
+    font-weight="400"
+    fill="#F1EEE6"
+    dominant-baseline="auto"
+  >A</text>
+
+  <!-- "." pequeño al pie -->
+  <text
+    x="145"
+    y="92"
+    font-family="'Noto Serif Display', Georgia, 'Times New Roman', serif"
+    font-size="60"
+    font-weight="400"
+    fill="#F1EEE6"
+    dominant-baseline="auto"
+  >.</text>
 </svg>

@@ -81,8 +81,8 @@ const Header = () => {
                         src="/logo-boost-agency.svg"
                         alt="Boost Agency Logo"
                         style={{
-                            width: '80px',
-                            height: '40px',
+                            width: '96px',
+                            height: '60px',
                             display: 'block',
                             objectFit: 'contain'
                         }}
