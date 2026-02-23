@@ -29,15 +29,14 @@ let db;
             driver: sqlite3.Database
         });
 
+        // Initial tables
         await db.exec(`
             CREATE TABLE IF NOT EXISTS settings (
                 id TEXT PRIMARY KEY,
                 instagram TEXT,
                 whatsapp TEXT,
                 email TEXT,
-                brand_name TEXT,
-                mision TEXT,
-                vision TEXT
+                brand_name TEXT
             );
 
             CREATE TABLE IF NOT EXISTS leads (
@@ -63,18 +62,20 @@ let db;
                 solution TEXT,
                 results TEXT
             );
+        `);
 
-            -- Initial Settings
+        // Migración automática para campos nuevos (Misión y Visión)
+        try { await db.exec(`ALTER TABLE settings ADD COLUMN mision TEXT`); } catch (e) { /* Ya existe */ }
+        try { await db.exec(`ALTER TABLE settings ADD COLUMN vision TEXT`); } catch (e) { /* Ya existe */ }
+
+        // Datos iniciales y relleno de valores vacíos
+        await db.exec(`
             INSERT OR IGNORE INTO settings (id, instagram, whatsapp, email, brand_name, mision, vision) 
             VALUES ('global', 'https://instagram.com/boost', '+1 234 567 890', 'hi@boost.agency', 'BOOST AGENCY',
                 'Impulsar el crecimiento de marcas con estrategia digital y experiencias de marca memorables que generen posicionamiento sólido y resultados medibles.',
                 'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.');
         `);
 
-        // Migración automática para bases de datos existentes
-        try { await db.exec(`ALTER TABLE settings ADD COLUMN mision TEXT`); } catch (e) { }
-        try { await db.exec(`ALTER TABLE settings ADD COLUMN vision TEXT`); } catch (e) { }
-        // Rellenar valores vacíos en registros existentes
         await db.run(`UPDATE settings SET
             mision = COALESCE(mision, 'Impulsar el crecimiento de marcas con estrategia digital y experiencias de marca memorables que generen posicionamiento sólido y resultados medibles.'),
             vision = COALESCE(vision, 'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.')
