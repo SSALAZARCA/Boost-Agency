@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 
 const SiteContext = createContext();
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const SiteProvider = ({ children }) => {
     const [settings, setSettings] = useState({
