@@ -100,7 +100,7 @@ const Hero = () => {
                         marginTop: '-0.1em'
                     }}>
                         {'Agency'.split('').map((char, i) => (
-                            <motion.span key={i} variants={titleVariants} style={{ display: 'inline-block', marginRight: i === 0 ? '3px' : '0' }}>{char}</motion.span>
+                            <motion.span key={i} variants={titleVariants} style={{ display: 'inline-block', marginRight: i === 0 ? '10px' : '0' }}>{char}</motion.span>
                         ))}
                     </span>
                 </motion.h1>
