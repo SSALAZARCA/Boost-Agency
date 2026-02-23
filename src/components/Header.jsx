@@ -76,13 +76,13 @@ const Header = () => {
                     smooth
                     style={{ textDecoration: 'none' }}
                 >
-                    {/* Logo circular Boost Agency */}
+                    {/* Logo Boost Agency */}
                     <img
                         src="/logo-boost-agency.svg"
                         alt="Boost Agency Logo"
                         style={{
-                            width: '64px',
-                            height: '64px',
+                            width: '80px',
+                            height: '40px',
                             display: 'block',
                             objectFit: 'contain'
                         }}
