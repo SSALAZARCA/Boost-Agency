@@ -24,6 +24,7 @@ import TermsConditions from './pages/TermsConditions';
 import CookiesPolicy from './pages/CookiesPolicy';
 import ProjectsPage from './pages/ProjectsPage';
 import CookieConsent from './components/CookieConsent';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieConsent />
+          <WhatsAppButton />
         </div>
       </Router>
     </SiteProvider>
