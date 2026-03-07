@@ -7,6 +7,7 @@ const API_URL = import.meta.env.VITE_API_URL || '/api';
 export const SiteProvider = ({ children }) => {
     const [settings, setSettings] = useState({
         instagram: '',
+        linkedin: '',
         whatsapp: '',
         email: '',
         brandName: 'BOOST AGENCY',
@@ -34,6 +35,7 @@ export const SiteProvider = ({ children }) => {
 
                 if (sData) setSettings({
                     instagram: sData.instagram,
+                    linkedin: sData.linkedin,
                     whatsapp: sData.whatsapp,
                     email: sData.email,
                     brandName: sData.brand_name,

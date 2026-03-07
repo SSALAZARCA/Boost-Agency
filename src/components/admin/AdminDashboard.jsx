@@ -427,6 +427,15 @@ const AdminDashboard = () => {
                                 />
                             </div>
                             <div>
+                                <label style={{ display: 'block', color: '#8892b0', marginBottom: '0.5rem' }}>LinkedIn URL</label>
+                                <input
+                                    type="text"
+                                    value={tempSettings.linkedin}
+                                    onChange={(e) => setTempSettings({ ...tempSettings, linkedin: e.target.value })}
+                                    style={inputStyleAdmin}
+                                />
+                            </div>
+                            <div>
                                 <label style={{ display: 'block', color: '#8892b0', marginBottom: '0.5rem' }}>Email de Contacto</label>
                                 <input
                                     type="text"

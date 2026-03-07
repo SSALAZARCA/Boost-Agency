@@ -34,6 +34,7 @@ let db;
             CREATE TABLE IF NOT EXISTS settings (
                 id TEXT PRIMARY KEY,
                 instagram TEXT,
+                linkedin TEXT,
                 whatsapp TEXT,
                 email TEXT,
                 brand_name TEXT
@@ -68,19 +69,21 @@ let db;
         // Migración automática para campos nuevos (Misión y Visión)
         try { await db.exec(`ALTER TABLE settings ADD COLUMN mision TEXT`); } catch (e) { /* Ya existe */ }
         try { await db.exec(`ALTER TABLE settings ADD COLUMN vision TEXT`); } catch (e) { /* Ya existe */ }
+        try { await db.exec(`ALTER TABLE settings ADD COLUMN linkedin TEXT`); } catch (e) { /* Ya existe */ }
         try { await db.exec(`ALTER TABLE leads ADD COLUMN phone TEXT`); } catch (e) { /* Ya existe */ }
 
         // Datos iniciales y relleno de valores vacíos
         await db.exec(`
-            INSERT OR IGNORE INTO settings (id, instagram, whatsapp, email, brand_name, mision, vision) 
-            VALUES ('global', 'https://instagram.com/boost', '+1 234 567 890', 'hi@boost.agency', 'BOOST AGENCY',
+            INSERT OR IGNORE INTO settings (id, instagram, linkedin, whatsapp, email, brand_name, mision, vision) 
+            VALUES ('global', 'https://instagram.com/boost', 'https://linkedin.com/company/boost', '+1 234 567 890', 'hi@boost.agency', 'BOOST AGENCY',
                 'Impulsar el crecimiento de marcas con estrategia digital y experiencias de marca memorables que generen posicionamiento sólido y resultados medibles.',
                 'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.');
         `);
 
         await db.run(`UPDATE settings SET
             mision = COALESCE(mision, 'Impulsar el crecimiento de marcas con estrategia digital y experiencias de marca memorables que generen posicionamiento sólido y resultados medibles.'),
-            vision = COALESCE(vision, 'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.')
+            vision = COALESCE(vision, 'Ser la agencia de referencia en Latinoamérica para marcas que compiten a un nivel superior, combinando creatividad, estrategia y ejecución impecable.'),
+            linkedin = COALESCE(linkedin, 'https://linkedin.com/company/boost')
             WHERE id = 'global'`);
 
         console.log('Database initialized successfully');
@@ -101,18 +104,18 @@ app.get('/api/settings', async (req, res) => {
 
 app.post('/api/settings', async (req, res) => {
     try {
-        const { instagram, whatsapp, email, brandName, brand_name, mision, vision } = req.body;
+        const { instagram, linkedin, whatsapp, email, brandName, brand_name, mision, vision } = req.body;
         const finalBrandName = brandName || brand_name;
 
-        console.log('Update Settings request received:', { instagram, whatsapp, email, finalBrandName, mision, vision });
+        console.log('Update Settings request received:', { instagram, linkedin, whatsapp, email, finalBrandName, mision, vision });
 
         if (!finalBrandName) {
             console.warn('Update Settings: brandName is missing');
         }
 
         await db.run(
-            'UPDATE settings SET instagram = ?, whatsapp = ?, email = ?, brand_name = ?, mision = ?, vision = ? WHERE id = "global"',
-            [instagram, whatsapp, email, finalBrandName, mision, vision]
+            'UPDATE settings SET instagram = ?, linkedin = ?, whatsapp = ?, email = ?, brand_name = ?, mision = ?, vision = ? WHERE id = "global"',
+            [instagram, linkedin, whatsapp, email, finalBrandName, mision, vision]
         );
 
         console.log('Settings updated in database successfully');

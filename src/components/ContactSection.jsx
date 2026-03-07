@@ -95,6 +95,42 @@ const ContactSection = () => {
                                 <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>{settings.email}</div>
                             </div>
                         </motion.a>
+
+                        {settings.instagram && (
+                            <motion.a
+                                href={settings.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', textDecoration: 'none', cursor: 'pointer', width: 'fit-content' }}
+                            >
+                                <div style={{ width: '50px', height: '50px', background: 'var(--color-highlight)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-black)' }}>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                </div>
+                                <div>
+                                    <div style={{ fontSize: '0.8rem', color: '#8892b0', textTransform: 'uppercase', letterSpacing: '1px' }}>Instagram</div>
+                                    <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>@boost.agency</div>
+                                </div>
+                            </motion.a>
+                        )}
+
+                        {settings.linkedin && (
+                            <motion.a
+                                href={settings.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', textDecoration: 'none', cursor: 'pointer', width: 'fit-content' }}
+                            >
+                                <div style={{ width: '50px', height: '50px', background: 'var(--color-highlight)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-black)' }}>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </div>
+                                <div>
+                                    <div style={{ fontSize: '0.8rem', color: '#8892b0', textTransform: 'uppercase', letterSpacing: '1px' }}>LinkedIn</div>
+                                    <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>Boost Agency</div>
+                                </div>
+                            </motion.a>
+                        )}
                     </div>
                 </div>
 
