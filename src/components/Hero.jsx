@@ -77,7 +77,7 @@ const Hero = () => {
                     animate="visible"
                     variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
                     style={{
-                        fontSize: 'clamp(3rem, 12vw, 9.5rem)',
+                        fontSize: 'clamp(3.5rem, 16vw, 9.5rem)', // Slightly larger min for better impact
                         fontFamily: 'var(--font-heading)',
                         color: 'var(--color-highlight)',
                         lineHeight: 0.85,
@@ -85,6 +85,8 @@ const Hero = () => {
                         letterSpacing: '-0.04em',
                         textShadow: '0 10px 40px rgba(0,0,0,0.5)',
                         fontWeight: 700,
+                        maxWidth: '100vw',
+                        overflow: 'hidden'
                     }}
                 >
                     <span style={{ display: 'block' }}>
@@ -110,7 +112,7 @@ const Hero = () => {
                         marginTop: '-0.1em'
                     }}>
                         {'Agency'.split('').map((char, i) => (
-                            <motion.span key={i} variants={titleVariants} style={{ display: 'inline-block', marginRight: i === 0 ? '10px' : '0' }}>{char}</motion.span>
+                            <motion.span key={i} variants={titleVariants} style={{ display: 'inline-block', marginRight: i === 0 ? '5px' : '0' }}>{char}</motion.span>
                         ))}
                     </span>
                 </motion.h1>

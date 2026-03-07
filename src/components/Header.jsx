@@ -47,7 +47,7 @@ const Header = () => {
         zIndex: 999,
         display: 'flex',
         flexDirection: 'column',
-        padding: '120px 8% 40px 8%', // Suficiente espacio arriba para no tapar el primer ítem
+        padding: 'clamp(80px, 15vh, 120px) 8% 40px 8%', // Espacio ajustable según pantalla
         overflowY: 'auto' // Permitir scroll si el contenido es mucho
     };
 
@@ -129,7 +129,7 @@ const Header = () => {
                         exit={{ opacity: 0, x: '20%' }}
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1.5rem, 5vh, 3rem)' }}>
                             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                                 <div style={{ fontSize: '0.65rem', color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '4px', marginBottom: '0.5rem', opacity: 0.7 }}>Menu</div>
                                 {navItems.map((item, index) => (
@@ -149,7 +149,7 @@ const Header = () => {
                                                 color: 'var(--color-secondary)',
                                                 textDecoration: 'none',
                                                 display: 'block',
-                                                padding: '1.2rem 1.5rem',
+                                                padding: 'clamp(0.8rem, 2vh, 1.2rem) 1.5rem',
                                                 border: '1px solid rgba(255,255,255,0.08)',
                                                 borderRadius: '12px', // Forma de botón redondeada sutil
                                                 backgroundColor: 'rgba(255,255,255,0.03)',
@@ -185,6 +185,14 @@ const Header = () => {
                                 <div style={{ display: 'flex', gap: '1.5rem' }}>
                                     <a href={settings.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Instagram</a>
                                     <a href={settings.whatsapp} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>WhatsApp</a>
+                                </div>
+                                <div style={{ borderTop: '1px solid rgba(241,238,230,0.15)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem', fontSize: '0.8rem', color: 'var(--color-accent)' }}>
+                                    <div style={{ display: 'flex', gap: 'clamp(1rem, 3vw, 2rem)', flexWrap: 'wrap', justifyContent: 'center' }}>
+                                        <span>© {new Date().getFullYear()} {settings.brandName}.</span>
+                                        <HashLink to="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'none', padding: '0.5rem' }} className="legal-link">Privacy</HashLink>
+                                        <HashLink to="/terms" style={{ color: 'var(--color-accent)', textDecoration: 'none', padding: '0.5rem' }} className="legal-link">Terms</HashLink>
+                                        <HashLink to="/cookies" style={{ color: 'var(--color-accent)', textDecoration: 'none', padding: '0.5rem' }} className="legal-link">Cookies</HashLink>
+                                    </div>
                                 </div>
                             </motion.div>
                         </div>

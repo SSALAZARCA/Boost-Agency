@@ -50,7 +50,7 @@ const ContactSection = () => {
 
     return (
         <Section id="contact" bgColor="var(--color-black)" textColor="white">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '5rem', width: '100%' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', width: '100%' }}>
 
                 {/* Left: Contact Info */}
                 <div>
@@ -99,7 +99,7 @@ const ContactSection = () => {
                 </div>
 
                 {/* Right: Form */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '3rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: 'clamp(1.5rem, 5vw, 3rem)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
                     <AnimatePresence mode="wait">
                         {formState !== 'success' ? (
                             <motion.form
@@ -109,7 +109,7 @@ const ContactSection = () => {
                                 exit={{ opacity: 0 }}
                                 onSubmit={handleSubmit}
                             >
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                <div className="grid-responsive-2">
                                     <div>
                                         <label style={labelStyle}>Name</label>
                                         <input type="text" name="name" value={formData.name} onChange={handleChange} required style={inputStyle} placeholder="Your name" />
@@ -120,7 +120,7 @@ const ContactSection = () => {
                                     </div>
                                 </div>
 
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                <div className="grid-responsive-2">
                                     <div>
                                         <label style={labelStyle}>Email</label>
                                         <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} placeholder="example@email.com" />

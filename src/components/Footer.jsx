@@ -45,11 +45,11 @@ const Footer = () => {
             </div>
 
             <div style={{ borderTop: '1px solid rgba(241,238,230,0.15)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem', fontSize: '0.8rem', color: 'var(--color-accent)' }}>
-                <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: 'clamp(1rem, 3vw, 2rem)', flexWrap: 'wrap', justifyContent: 'center' }}>
                     <span>© {new Date().getFullYear()} {settings.brandName}.</span>
-                    <HashLink to="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Privacy</HashLink>
-                    <HashLink to="/terms" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Terms</HashLink>
-                    <HashLink to="/cookies" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Cookies</HashLink>
+                    <HashLink to="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'none', padding: '0.4rem 0.6rem' }} className="legal-link">Privacy</HashLink>
+                    <HashLink to="/terms" style={{ color: 'var(--color-accent)', textDecoration: 'none', padding: '0.4rem 0.6rem' }} className="legal-link">Terms</HashLink>
+                    <HashLink to="/cookies" style={{ color: 'var(--color-accent)', textDecoration: 'none', padding: '0.4rem 0.6rem' }} className="legal-link">Cookies</HashLink>
                 </div>
                 <div style={{ display: 'flex', gap: '2rem' }}>
                     <a href={settings.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

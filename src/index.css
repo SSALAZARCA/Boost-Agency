@@ -102,6 +102,19 @@ button:hover {
   color: var(--color-white);
 }
 
+/* Responsive Grids */
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .grid-responsive-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Better Input Placeholders */
 ::placeholder {
   color: rgba(255, 255, 255, 0.4);
@@ -114,4 +127,15 @@ button:hover {
 
 ::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.4);
+}
+
+/* Global Fixes */
+.app-container {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#root {
+  overflow-x: hidden;
 }

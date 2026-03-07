@@ -34,7 +34,7 @@ const MethodologySection = () => {
     return (
         <Section id="framework" title="Our Strategic Framework" bgColor="var(--color-black)" alignment="center">
             <div style={{ maxWidth: '1000px', margin: '0 auto', width: '100%' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2rem, 8vw, 4rem)' }}>
                     {steps.map((step, index) => (
                         <motion.div
                             key={index}
@@ -44,8 +44,8 @@ const MethodologySection = () => {
                             transition={{ duration: 0.8, delay: index * 0.1 }}
                             style={{
                                 display: 'flex',
-                                gap: '3rem',
-                                padding: '3rem',
+                                gap: 'clamp(1rem, 5vw, 3rem)',
+                                padding: 'clamp(1.5rem, 5vw, 3rem)',
                                 background: 'rgba(255,255,255,0.03)',
                                 borderRadius: '16px',
                                 boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
