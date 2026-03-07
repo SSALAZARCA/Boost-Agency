@@ -81,7 +81,7 @@ const Hero = () => {
                         fontFamily: 'var(--font-heading)',
                         color: 'var(--color-highlight)',
                         lineHeight: 0.85,
-                        marginBottom: 'clamp(2rem, 5vh, 4rem)',
+                        marginBottom: 'clamp(4rem, 10vh, 8rem)', // Gran margen inferior para la 'g' y 'y'
                         letterSpacing: '-0.04em',
                         textShadow: '0 10px 40px rgba(0,0,0,0.5)',
                         fontWeight: 700,
@@ -114,7 +114,7 @@ const Hero = () => {
                         margin: '0 auto',
                         textAlign: 'center',
                         zIndex: 2,
-                        marginTop: 'clamp(1rem, 4vh, 3rem)'
+                        marginTop: 'clamp(2rem, 8vh, 5rem)'
                     }}
                 >
                     <h2
