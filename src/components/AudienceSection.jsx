@@ -117,8 +117,8 @@ const AudienceSection = () => {
                     style={{ position: 'relative', height: '650px', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 30px 70px rgba(0,0,0,0.5)' }}
                 >
                     <img
-                        src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
-                        alt="High-end Architecture"
+                        src="/slider/imagen 3.jpeg"
+                        alt="Boost Agency Floral Arrangement"
                         style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }}
                     />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(14,40,65,0.4), transparent)' }}></div>
