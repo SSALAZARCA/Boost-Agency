@@ -109,7 +109,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <div style={{ fontSize: '0.8rem', color: '#8892b0', textTransform: 'uppercase', letterSpacing: '1px' }}>Instagram</div>
-                                    <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>{settings.brandName || '@boost.agency'}</div>
+                                    <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>{settings.brandName} Instagram</div>
                                 </div>
                             </motion.a>
                         )}
@@ -127,7 +127,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <div style={{ fontSize: '0.8rem', color: '#8892b0', textTransform: 'uppercase', letterSpacing: '1px' }}>LinkedIn</div>
-                                    <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>{settings.brandName || '@boost.agency'}</div>
+                                    <div style={{ fontSize: '1.1rem', color: 'white', fontWeight: 'bold' }}>{settings.brandName} LinkedIn</div>
                                 </div>
                             </motion.a>
                         )}
