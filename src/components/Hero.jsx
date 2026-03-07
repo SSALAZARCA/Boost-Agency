@@ -80,7 +80,7 @@ const Hero = () => {
                         fontSize: 'clamp(3.5rem, 16vw, 9.5rem)', // Slightly larger min for better impact
                         fontFamily: 'var(--font-heading)',
                         color: 'var(--color-highlight)',
-                        lineHeight: 1.1,
+                        lineHeight: 0.85,
                         marginBottom: '0',
                         letterSpacing: '-0.04em',
                         textShadow: '0 10px 40px rgba(0,0,0,0.5)',
@@ -108,7 +108,7 @@ const Hero = () => {
                         marginLeft: '3vw',
                         fontStyle: 'italic',
                         fontWeight: 400,
-                        marginTop: '0'
+                        marginTop: '-0.15em'
                     }}>
                         {'Agency'.split('').map((char, i) => (
                             <motion.span key={i} variants={titleVariants} style={{ display: 'inline-block', marginRight: i === 0 ? '5px' : '0' }}>{char}</motion.span>
