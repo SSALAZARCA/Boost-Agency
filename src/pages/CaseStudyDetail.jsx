@@ -14,7 +14,7 @@ const CaseStudyDetail = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    if (!project) return <div style={{ color: 'white', padding: '10rem', textAlign: 'center' }}>Proyecto no encontrado</div>;
+    if (!project) return <div style={{ color: 'white', padding: '10rem', textAlign: 'center' }}>Project not found</div>;
 
     return (
         <div style={{ background: 'var(--color-black)', color: 'white', minHeight: '100vh' }}>
@@ -22,7 +22,7 @@ const CaseStudyDetail = () => {
             <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link to="/" style={{ color: '#ffbd69', textDecoration: 'none', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-                    Volver
+                    Back
                 </Link>
                 <div style={{ color: '#666', fontSize: '0.8rem', letterSpacing: '2px' }}>BOOST CASE STUDY</div>
             </nav>
@@ -51,18 +51,18 @@ const CaseStudyDetail = () => {
 
                 {/* Left Column: Info */}
                 <div>
-                    <h2 style={{ color: '#ffbd69', fontSize: '2rem', marginBottom: '2rem' }}>La Estrategia</h2>
+                    <h2 style={{ color: '#ffbd69', fontSize: '2rem', marginBottom: '2rem' }}>Strategy</h2>
                     <p style={{ fontSize: '1.2rem', lineHeight: 1.8, color: '#ccc', marginBottom: '3rem' }}>
                         {project.description}
                     </p>
 
                     <div style={{ marginBottom: '3rem' }}>
-                        <h3 style={{ color: 'white', marginBottom: '1rem' }}>El Desafío</h3>
+                        <h3 style={{ color: 'white', marginBottom: '1rem' }}>The Challenge</h3>
                         <p style={{ color: '#8892b0', lineHeight: 1.6 }}>{project.challenge}</p>
                     </div>
 
                     <div>
-                        <h3 style={{ color: 'white', marginBottom: '1rem' }}>Nuestra Solución</h3>
+                        <h3 style={{ color: 'white', marginBottom: '1rem' }}>Our Solution</h3>
                         <p style={{ color: '#8892b0', lineHeight: 1.6 }}>{project.solution}</p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ const CaseStudyDetail = () => {
                         <div style={{ color: '#8892b0', textTransform: 'uppercase', letterSpacing: '2px' }}>{project.metricLabel}</div>
                     </div>
 
-                    <h3 style={{ color: '#ffbd69', marginBottom: '2rem', textAlign: 'center' }}>Resultados Clave</h3>
+                    <h3 style={{ color: '#ffbd69', marginBottom: '2rem', textAlign: 'center' }}>Key Results</h3>
                     <ul style={{ listStyle: 'none', padding: 0 }}>
                         {project.results.map((result, index) => (
                             <li key={index} style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem', color: '#ccc' }}>
@@ -87,10 +87,10 @@ const CaseStudyDetail = () => {
 
             {/* CTA Section */}
             <div style={{ padding: '10rem 5%', textAlign: 'center', background: 'rgba(100,255,218,0.03)' }}>
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>¿Quieres resultados similares para tu marca?</h2>
+                <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Want similar results for your brand?</h2>
                 <HashLink
                     smooth
-                    to="/#contacto"
+                    to="/#contact"
                     style={{
                         display: 'inline-block',
                         padding: '1.2rem 3.5rem',
@@ -101,7 +101,7 @@ const CaseStudyDetail = () => {
                         textDecoration: 'none'
                     }}
                 >
-                    Iniciar Consulta Estratégica
+                    Start Strategic Consultation
                 </HashLink>
             </div>
 

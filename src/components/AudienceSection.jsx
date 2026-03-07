@@ -59,75 +59,69 @@ const NetworkVisual = () => {
 };
 
 const AudienceSection = () => {
-    const profiles = [
-        { label: "Clínicas Estéticas", icon: "✦" },
-        { label: "Restaurantes", icon: "✦" },
-        { label: "Hoteles Boutique", icon: "✦" },
-        { label: "Beauty & Lifestyle", icon: "✦" },
-        { label: "Real Estate", icon: "✦" },
-        { label: "Marcas de Lujo", icon: "✦" }
+    const reasons = [
+        "Strategic thinking over trends",
+        "Integrated execution under one vision",
+        "Experience-driven brand building",
+        "Global mindset with local precision"
     ];
 
     return (
-        <Section id="publico" bgColor="var(--color-primary)" textColor="var(--color-white)">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', width: '100%', alignItems: 'center' }}>
+        <Section id="why-boost" bgColor="var(--color-secondary)" textColor="var(--color-black)">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '5rem', width: '100%', alignItems: 'center' }}>
 
-                {/* Left: Text */}
+                {/* Left: Text Content */}
                 <div>
                     <motion.p
-                        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-                        style={{ color: 'var(--color-highlight)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        style={{ color: 'var(--color-black)', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1.5rem', fontSize: '0.9rem', fontWeight: 700, opacity: 0.6 }}
                     >
-                        Público Objetivo
+                        The Choice
                     </motion.p>
-                    <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: 'white', marginBottom: '2rem', fontFamily: 'var(--font-heading)' }}>
-                        Para quienes compiten en la cima.
+                    <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--color-black)', marginBottom: '3rem', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
+                        Why Brands <br /> Choose Boost
                     </h2>
-                    <p style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '3rem', lineHeight: 1.6 }}>
-                        Trabajamos con marcas aspiracionales que entienden el valor del posicionamiento y buscan un crecimiento estructurado y sostenible.
-                    </p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                        {profiles.map((item, i) => (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                        {reasons.map((reason, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                style={{ display: 'flex', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', color: 'white' }}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    paddingBottom: '1rem',
+                                    borderBottom: '1px solid rgba(0,0,0,0.1)',
+                                    fontSize: '1.25rem',
+                                    color: 'var(--color-black)'
+                                }}
                             >
-                                <span style={{ color: 'var(--color-highlight)', marginRight: '1rem' }}>{item.icon}</span>
-                                {item.label}
+                                <span style={{ color: 'var(--color-black)', marginRight: '1.5rem', fontSize: '1.5rem', opacity: 0.8 }}>†</span>
+                                {reason}
                             </motion.div>
                         ))}
                     </div>
                 </div>
 
-                {/* Right: Visual Realista (Lifestyle Luxury) */}
+                {/* Right: Visual Imagery */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    style={{ position: 'relative', height: '600px', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.3)' }}
+                    transition={{ duration: 1 }}
+                    style={{ position: 'relative', height: '650px', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 30px 70px rgba(0,0,0,0.5)' }}
                 >
                     <img
                         src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
-                        alt="Arquitectura Moderna y Lujo"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        alt="High-end Architecture"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }}
                     />
-                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,25,47,0.2)' }}></div>
-                    <motion.div
-                        style={{
-                            position: 'absolute', bottom: '2rem', left: '2rem',
-                            background: 'rgba(255,255,255,0.9)', padding: '1rem 2rem', borderRadius: '4px',
-                            color: 'var(--color-black)', fontWeight: 'bold', fontFamily: 'var(--font-heading)'
-                        }}
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        EXCLUSIVIDAD
-                    </motion.div>
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(14,40,65,0.4), transparent)' }}></div>
                 </motion.div>
 
             </div>

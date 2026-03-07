@@ -4,66 +4,91 @@ import { motion } from 'framer-motion';
 
 const MethodologySection = () => {
     const steps = [
-        { title: "Diagnóstico Estratégico", desc: "Analizamos el estado actual de la marca, mercado, competencia y posicionamiento." },
-        { title: "Definición de Dirección", desc: "Establecemos objetivos claros, tono, narrativa y enfoque comercial." },
-        { title: "Plan de Acción", desc: "Diseñamos el roadmap de marketing o experiencia de marca con métricas definidas." },
-        { title: "Ejecución Estratégica", desc: "Implementamos cada acción bajo estándares de calidad y coherencia visual." },
-        { title: "Optimización y Escalamiento", desc: "Medimos, ajustamos y evolucionamos la estrategia para mantener crecimiento sostenible." }
-    ];
-
-    const philosophyItems = [
-        "Estrategia antes que ejecución",
-        "Coherencia antes que tendencia",
-        "Posicionamiento antes que volumen",
-        "Calidad antes que cantidad"
+        {
+            number: "01",
+            title: "Strategic Diagnosis",
+            desc: "We analyze business context, market positioning and growth opportunities."
+        },
+        {
+            number: "02",
+            title: "Brand Direction",
+            desc: "We define narrative, differentiation and positioning architecture."
+        },
+        {
+            number: "03",
+            title: "Growth Roadmap",
+            desc: "We design a strategic plan connecting marketing, experience and brand expansion."
+        },
+        {
+            number: "04",
+            title: "Strategic Execution",
+            desc: "Every action is executed under centralized creative and strategic direction."
+        },
+        {
+            number: "05",
+            title: "Optimization & Scaling",
+            desc: "We measure, refine and scale what truly drives growth."
+        }
     ];
 
     return (
-        <Section id="metodologia" title="Metodología Boost" bgColor="var(--color-secondary)" alignment="left">
-
-            {/* Methodology Steps */}
-            <div style={{ display: 'grid', gap: '2rem', marginBottom: '5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-                {steps.map((step, index) => (
-                    <div key={index} style={{ borderLeft: '2px solid var(--color-primary)', paddingLeft: '1.5rem' }}>
-                        <h4 style={{
-                            fontFamily: 'var(--font-heading)',
-                            fontSize: '1.25rem',
-                            color: 'var(--color-primary)',
-                            marginBottom: '0.5rem'
-                        }}>
-                            {index + 1}. {step.title}
-                        </h4>
-                        <p style={{ fontSize: '1rem', color: '#444' }}>{step.desc}</p>
-                    </div>
-                ))}
-            </div>
-
-            {/* Philosophy */}
-            <div style={{ backgroundColor: 'var(--color-primary)', color: 'white', padding: '3rem', borderRadius: '4px', textAlign: 'center' }}>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', marginBottom: '2rem', color: 'var(--color-highlight)' }}>
-                    Filosofía Boost
-                </h3>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-                    {philosophyItems.map((item, index) => (
+        <Section id="framework" title="Our Strategic Framework" bgColor="var(--color-black)" alignment="center">
+            <div style={{ maxWidth: '1000px', margin: '0 auto', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+                    {steps.map((step, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            style={{ fontWeight: 600, fontSize: '1.1rem' }}
+                            transition={{ duration: 0.8, delay: index * 0.1 }}
+                            style={{
+                                display: 'flex',
+                                gap: '3rem',
+                                padding: '3rem',
+                                background: 'rgba(255,255,255,0.03)',
+                                borderRadius: '16px',
+                                boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+                                alignItems: 'center',
+                                border: '1px solid rgba(255,255,255,0.05)',
+                                textAlign: 'left',
+                                flexWrap: 'wrap'
+                            }}
                         >
-                            {item}
+                            <div style={{
+                                fontSize: '3rem',
+                                color: 'var(--color-highlight)',
+                                fontWeight: 800,
+                                opacity: 1,
+                                minWidth: '80px',
+                                fontFamily: 'var(--font-heading)',
+                                fontStretch: 'var(--font-heading-stretch)'
+                            }}>
+                                {step.number}
+                            </div>
+                            <div style={{ flex: 1, minWidth: '280px' }}>
+                                <h4 style={{
+                                    fontSize: '1.75rem',
+                                    color: 'var(--color-highlight)', // Highlight
+                                    marginBottom: '2rem',
+                                    fontWeight: 600,
+                                    fontFamily: 'var(--font-heading)'
+                                }}>
+                                    {step.title}
+                                </h4>
+                                <p style={{
+                                    fontSize: '1.2rem',
+                                    lineHeight: 1.6,
+                                    color: 'rgba(255,255,255,0.8)',
+                                    maxWidth: '600px'
+                                }}>
+                                    {step.desc}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
-
-                <p style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '2rem', display: 'inline-block' }}>
-                    "Las marcas fuertes no nacen del ruido. Nacen de la dirección."
-                </p>
             </div>
-
         </Section>
     );
 };

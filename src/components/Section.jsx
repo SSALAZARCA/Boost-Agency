@@ -43,8 +43,12 @@ const Section = ({
                         transition={{ duration: 0.6 }}
                         style={{
                             marginBottom: 'var(--spacing-md)',
-                            fontSize: 'clamp(2rem, 5vw, 3rem)',
-                            textAlign: alignment === 'center' ? 'center' : 'left'
+                            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                            fontFamily: 'var(--font-heading)',
+                            fontStretch: 'var(--font-heading-stretch)',
+                            color: bgColor === 'var(--color-black)' ? 'white' : 'var(--color-black)',
+                            textAlign: alignment === 'center' ? 'center' : 'left',
+                            lineHeight: 1.1
                         }}
                     >
                         {title}

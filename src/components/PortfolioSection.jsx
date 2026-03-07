@@ -9,7 +9,7 @@ const PortfolioSection = () => {
     const { projects } = useSite();
 
     return (
-        <Section id="portafolio" bgColor="#0E2841" textColor="var(--color-secondary)">
+        <Section id="portfolio" bgColor="#0E2841" textColor="var(--color-secondary)">
             <div style={{ marginBottom: '5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem' }}>
                 <div style={{ maxWidth: '600px' }}>
                     <motion.h2
@@ -18,9 +18,9 @@ const PortfolioSection = () => {
                         viewport={{ once: true }}
                         style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', color: 'white' }}
                     >
-                        Casos de <span style={{ color: 'var(--color-highlight)' }}>Éxito</span>.
+                        Success <span style={{ color: 'var(--color-highlight)' }}>Stories</span>.
                     </motion.h2>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--color-accent)' }}>Proyectos donde la estrategia y el branding transformaron negocios reales.</p>
+                    <p style={{ fontSize: '1.2rem', color: 'var(--color-accent)' }}>Projects where strategy and branding transformed real businesses.</p>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@ const PortfolioSection = () => {
             </div>
 
             <div style={{ marginTop: '5rem', textAlign: 'center' }}>
-                <Link to="/proyectos" style={{ textDecoration: 'none' }}>
+                <Link to="/projects" style={{ textDecoration: 'none' }}>
                     <motion.button
                         whileHover={{ scale: 1.05, backgroundColor: 'rgba(253,253,136,0.15)' }}
                         whileTap={{ scale: 0.95 }}
@@ -52,7 +52,7 @@ const PortfolioSection = () => {
                             transition: 'all 0.3s ease'
                         }}
                     >
-                        Ver Portafolio Completo →
+                        View Full Portfolio →
                     </motion.button>
                 </Link>
             </div>

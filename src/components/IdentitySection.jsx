@@ -3,44 +3,65 @@ import Section from './Section';
 import { motion } from 'framer-motion';
 
 const IdentitySection = () => {
-    const traits = ["Sofisticada", "Estratégica", "Visionaria", "Ambiciosa", "Selectiva", "Moderna", "Orientada a resultados"];
+    const philosophyPoints = [
+        "Strategy before execution",
+        "Coherence before trends",
+        "Positioning before volume",
+        "Quality before quantity"
+    ];
 
     return (
-        <Section id="identidad" title="Personalidad de Marca" bgColor="#f9f9f9" alignment="center">
-
-            {/* Archetypes */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
-                <div style={{ textAlign: 'center' }}>
-                    <h4 style={{ color: 'var(--color-primary)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>El Gobernante</h4>
-                    <p style={{ color: 'var(--color-accent)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Arquetipo Principal</p>
-                    <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>Liderazgo, dirección, estructura y autoridad.</p>
+        <Section id="philosophy" title="Our Philosophy" bgColor="var(--color-black)" alignment="center">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.5rem',
+                    marginBottom: '4rem',
+                    textAlign: 'left',
+                    paddingLeft: '2rem',
+                    borderLeft: '1px solid var(--color-primary)'
+                }}>
+                    {philosophyPoints.map((point, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            style={{
+                                fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                                color: 'var(--color-highlight)',
+                                fontWeight: 800,
+                                opacity: 0.6,
+                                display: 'flex',
+                                alignItems: 'center',
+                                fontFamily: 'var(--font-heading)',
+                                fontStretch: 'var(--font-heading-stretch)'
+                            }}
+                        >
+                            <span style={{ fontSize: '0.8rem', marginRight: '1.5rem', opacity: 0.8, color: 'var(--color-highlight)' }}>●</span>
+                            {point}
+                        </motion.div>
+                    ))}
                 </div>
-                <div style={{ width: '1px', background: '#ccc', height: '100px', alignSelf: 'center', display: 'none' }} className="divider"></div>
-                <div style={{ textAlign: 'center' }}>
-                    <h4 style={{ color: 'var(--color-primary)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>El Creador</h4>
-                    <p style={{ color: 'var(--color-accent)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Arquetipo Secundario</p>
-                    <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>Innovación, concepto y diferenciación.</p>
-                </div>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                    style={{
+                        fontSize: '1.5rem',
+                        fontStyle: 'italic',
+                        color: 'white',
+                        marginTop: '2rem',
+                        opacity: 0.9
+                    }}
+                >
+                    Strong brands are built through direction, not noise.
+                </motion.p>
             </div>
-
-            {/* Personality Traits */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginBottom: '4rem', maxWidth: '800px' }}>
-                {traits.map((trait, i) => (
-                    <span key={i} style={{
-                        padding: '0.5rem 1.5rem',
-                        border: '1px solid var(--color-primary)',
-                        borderRadius: '50px',
-                        fontSize: '0.9rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
-                    }}>
-                        {trait}
-                    </span>
-                ))}
-            </div>
-
-
-
         </Section>
     );
 };

@@ -43,21 +43,23 @@ const Header = () => {
         left: 0,
         width: '100vw',
         height: '100vh',
-        backgroundColor: '#2E3192',
+        backgroundColor: 'var(--color-black)',
         zIndex: 999,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: '120px 8% 40px 8%', // Suficiente espacio arriba para no tapar el primer ítem
+        overflowY: 'auto' // Permitir scroll si el contenido es mucho
     };
 
     const navItems = [
-        { label: 'ADN', id: 'adn' },
-        { label: 'Servicios', id: 'servicios' },
-        { label: 'Portafolio', id: 'portafolio' },
-        { label: 'Público', id: 'publico' },
-        { label: 'Metodología', id: 'metodologia' },
-        { label: 'Contacto', id: 'contacto' }
+        { label: 'Philosophy', id: 'philosophy' },
+        { label: 'Capabilities', id: 'capabilities' },
+        { label: 'Portfolio', id: 'portfolio' },
+        { label: 'Strategic Framework', id: 'framework' },
+        { label: 'Beyond Marketing', id: 'beyond-marketing' },
+        { label: 'DNA', id: 'dna' },
+        { label: 'Why Boost', id: 'why-boost' },
+        { label: 'Contact', id: 'contact' }
     ];
 
     return (
@@ -76,7 +78,6 @@ const Header = () => {
                     smooth
                     style={{ textDecoration: 'none' }}
                 >
-                    {/* Logo Boost Agency */}
                     <img
                         src="/logo-boost-agency.svg"
                         alt="Boost Agency Logo"
@@ -96,12 +97,26 @@ const Header = () => {
                         background: 'none',
                         border: 'none',
                         cursor: 'pointer',
-                        padding: '1rem'
+                        padding: '1rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '6px'
                     }}
                 >
-                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : '#F1EEE6', marginBottom: '5px', transition: '0.3s' }}></div>
-                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : '#F1EEE6', marginBottom: '5px', opacity: menuOpen ? 0 : 1, transition: '0.3s' }}></div>
-                    <div style={{ width: '30px', height: '2px', background: menuOpen ? 'white' : '#F1EEE6', transition: '0.3s' }}></div>
+                    <motion.div
+                        animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 8 : 0 }}
+                        style={{ width: '32px', height: '2px', background: 'var(--color-secondary)' }}
+                    />
+                    <motion.div
+                        animate={{ opacity: menuOpen ? 0 : 1 }}
+                        style={{ width: '32px', height: '2px', background: 'var(--color-secondary)' }}
+                    />
+                    <motion.div
+                        animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -8 : 0 }}
+                        style={{ width: '32px', height: '2px', background: 'var(--color-secondary)' }}
+                    />
                 </button>
             </motion.header>
 
@@ -109,38 +124,70 @@ const Header = () => {
                 {menuOpen && (
                     <motion.div
                         style={menuOverlayStyle}
-                        initial={{ opacity: 0, clipPath: 'circle(0% at 100% 0)' }}
-                        animate={{ opacity: 1, clipPath: 'circle(150% at 100% 0)' }}
-                        exit={{ opacity: 0, clipPath: 'circle(0% at 100% 0)' }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        initial={{ opacity: 0, x: '20%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '20%' }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <nav style={{ display: 'flex', flexDirection: 'column', gap: '2rem', textAlign: 'center' }}>
-                            {navItems.map((item, index) => (
-                                <motion.div
-                                    key={item.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 + index * 0.1 }}
-                                >
-                                    <HashLink
-                                        smooth
-                                        to={`/#${item.id}`}
-                                        onClick={() => setMenuOpen(false)}
-                                        style={{
-                                            fontFamily: 'var(--font-heading)',
-                                            fontSize: '3rem',
-                                            color: 'var(--color-secondary)',
-                                            textDecoration: 'none',
-                                            position: 'relative',
-                                            overflow: 'hidden'
-                                        }}
-                                        whileHover={{ scale: 1.05, color: 'var(--color-highlight)' }}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                            <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                                <div style={{ fontSize: '0.65rem', color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '4px', marginBottom: '0.5rem', opacity: 0.7 }}>Menu</div>
+                                {navItems.map((item, index) => (
+                                    <motion.div
+                                        key={item.id}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.04 }}
                                     >
-                                        {item.label}
-                                    </HashLink>
-                                </motion.div>
-                            ))}
-                        </nav>
+                                        <HashLink
+                                            smooth
+                                            to={`/#${item.id}`}
+                                            onClick={() => setMenuOpen(false)}
+                                            style={{
+                                                fontFamily: 'var(--font-heading)',
+                                                fontSize: '1.6rem', // Reducido para mejor legibilidad
+                                                color: 'var(--color-secondary)',
+                                                textDecoration: 'none',
+                                                display: 'block',
+                                                padding: '1.2rem 1.5rem',
+                                                border: '1px solid rgba(255,255,255,0.08)',
+                                                borderRadius: '12px', // Forma de botón redondeada sutil
+                                                backgroundColor: 'rgba(255,255,255,0.03)',
+                                                transition: 'all 0.3s ease'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.target.style.backgroundColor = 'rgba(255,255,255,0.08)';
+                                                e.target.style.borderColor = 'var(--color-highlight)';
+                                                e.target.style.color = 'var(--color-highlight)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.target.style.backgroundColor = 'rgba(255,255,255,0.03)';
+                                                e.target.style.borderColor = 'rgba(255,255,255,0.08)';
+                                                e.target.style.color = 'var(--color-secondary)';
+                                            }}
+                                        >
+                                            {item.label}
+                                        </HashLink>
+                                    </motion.div>
+                                ))}
+                            </nav>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                                style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', paddingBottom: '2rem' }}
+                            >
+                                <div>
+                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '0.5rem' }}>Let's talk</div>
+                                    <a href={`mailto:${settings.email}`} style={{ color: 'var(--color-secondary)', textDecoration: 'none', fontSize: '1rem', opacity: 0.9 }}>{settings.email}</a>
+                                </div>
+                                <div style={{ display: 'flex', gap: '1.5rem' }}>
+                                    <a href={settings.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Instagram</a>
+                                    <a href={settings.whatsapp} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>WhatsApp</a>
+                                </div>
+                            </motion.div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

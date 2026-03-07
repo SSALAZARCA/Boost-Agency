@@ -44,7 +44,7 @@ const LegalPage = ({ title, lastUpdated, children }) => {
             }}>
                 <Link to="/" style={{ color: '#ffbd69', textDecoration: 'none', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-                    Volver al Inicio
+                    Back to Home
                 </Link>
                 <div style={{ color: '#666', fontSize: '0.8rem', letterSpacing: '2px', textTransform: 'uppercase' }}>Boost Legal</div>
             </nav>
@@ -55,7 +55,7 @@ const LegalPage = ({ title, lastUpdated, children }) => {
                 style={containerStyle}
             >
                 <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontFamily: 'var(--font-heading)', marginBottom: '1rem', color: 'white' }}>{title}</h1>
-                <p style={{ color: '#64ffda', marginBottom: '4rem', fontSize: '0.9rem', letterSpacing: '1px' }}>ÚLTIMA ACTUALIZACIÓN: {lastUpdated}</p>
+                <p style={{ color: '#64ffda', marginBottom: '4rem', fontSize: '0.9rem', letterSpacing: '1px' }}>LAST UPDATED: {lastUpdated}</p>
 
                 <div style={textStyle}>
                     {children}

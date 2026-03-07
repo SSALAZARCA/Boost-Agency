@@ -162,6 +162,7 @@ const AdminDashboard = () => {
                                             <div>
                                                 <div style={{ fontWeight: 'bold' }}>{lead.name}</div>
                                                 <div style={{ fontSize: '0.8rem', color: '#8892b0' }}>{lead.company} · {lead.date}</div>
+                                                {lead.phone && <div style={{ fontSize: '0.75rem', color: '#64ffda', marginTop: '0.2rem' }}>{lead.phone}</div>}
                                             </div>
                                             <div style={{
                                                 fontSize: '0.7rem',
@@ -207,7 +208,7 @@ const AdminDashboard = () => {
                                 <thead>
                                     <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                                         <th style={{ padding: '1rem', color: '#8892b0' }}>Nombre / Empresa</th>
-                                        <th style={{ padding: '1rem', color: '#8892b0' }}>Contacto</th>
+                                        <th style={{ padding: '1rem', color: '#8892b0' }}>Contacto (Email/Tel)</th>
                                         <th style={{ padding: '1rem', color: '#8892b0' }}>Mensaje del Cliente</th>
                                         <th style={{ padding: '1rem', color: '#8892b0' }}>Estado</th>
                                         <th style={{ padding: '1rem', color: '#8892b0' }}>Notas Internas</th>
@@ -223,6 +224,7 @@ const AdminDashboard = () => {
                                             </td>
                                             <td style={{ padding: '1rem' }}>
                                                 <div style={{ color: '#64ffda' }}>{lead.email}</div>
+                                                <div style={{ color: '#8892b0', fontSize: '0.8rem', marginTop: '0.4rem' }}>{lead.phone || '—'}</div>
                                             </td>
                                             <td style={{ padding: '1rem', maxWidth: '300px' }}>
                                                 <div style={{

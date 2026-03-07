@@ -44,6 +44,7 @@ let db;
                 name TEXT,
                 company TEXT,
                 email TEXT,
+                phone TEXT,
                 message TEXT,
                 date TEXT,
                 status TEXT,
@@ -67,6 +68,7 @@ let db;
         // Migración automática para campos nuevos (Misión y Visión)
         try { await db.exec(`ALTER TABLE settings ADD COLUMN mision TEXT`); } catch (e) { /* Ya existe */ }
         try { await db.exec(`ALTER TABLE settings ADD COLUMN vision TEXT`); } catch (e) { /* Ya existe */ }
+        try { await db.exec(`ALTER TABLE leads ADD COLUMN phone TEXT`); } catch (e) { /* Ya existe */ }
 
         // Datos iniciales y relleno de valores vacíos
         await db.exec(`
@@ -133,12 +135,12 @@ app.get('/api/leads', async (req, res) => {
 
 app.post('/api/leads', async (req, res) => {
     try {
-        const { name, company, email, message } = req.body;
+        const { name, company, email, phone, message } = req.body;
         const id = uuidv4();
         const date = new Date().toISOString().split('T')[0];
         await db.run(
-            'INSERT INTO leads (id, name, company, email, message, date, status, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-            [id, name, company, email, message, date, 'Nuevo', '']
+            'INSERT INTO leads (id, name, company, email, phone, message, date, status, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [id, name, company, email, phone, message, date, 'Nuevo', '']
         );
         res.json({ success: true, id });
     } catch (err) {

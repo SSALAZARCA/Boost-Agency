@@ -11,15 +11,15 @@ const Footer = () => {
 
             <div style={{ maxWidth: '800px', margin: '0 auto 4rem auto' }}>
                 <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', marginBottom: '1.5rem', color: 'var(--color-secondary)' }}>
-                    ¿Listos para competir a un nivel superior?
+                    Ready to compete at a higher level?
                 </h2>
                 <p style={{ fontSize: '1.2rem', color: 'var(--color-accent)', marginBottom: '3rem' }}>
-                    Hablemos de estrategia.
+                    Let's talk strategy.
                 </p>
 
                 <HashLink
                     smooth
-                    to="/#contacto"
+                    to="/#contact"
                     style={{
                         display: 'inline-block',
                         padding: '1rem 3rem',
@@ -39,7 +39,7 @@ const Footer = () => {
                         whileTap={{ scale: 0.95 }}
                         style={{ display: 'block' }}
                     >
-                        Contactar Ahora
+                        Contact Now
                     </motion.span>
                 </HashLink>
             </div>
@@ -47,8 +47,8 @@ const Footer = () => {
             <div style={{ borderTop: '1px solid rgba(241,238,230,0.15)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem', fontSize: '0.8rem', color: 'var(--color-accent)' }}>
                 <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
                     <span>© {new Date().getFullYear()} {settings.brandName}.</span>
-                    <HashLink to="/privacidad" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Privacidad</HashLink>
-                    <HashLink to="/terminos" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Términos</HashLink>
+                    <HashLink to="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Privacy</HashLink>
+                    <HashLink to="/terms" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Terms</HashLink>
                     <HashLink to="/cookies" style={{ color: 'var(--color-accent)', textDecoration: 'none' }} className="legal-link">Cookies</HashLink>
                 </div>
                 <div style={{ display: 'flex', gap: '2rem' }}>

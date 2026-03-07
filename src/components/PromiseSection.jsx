@@ -4,36 +4,34 @@ import { motion } from 'framer-motion';
 
 const PromiseSection = () => {
     return (
-        <Section id="promesa" title="Propuesta de Valor" bgColor="var(--color-primary)" textColor="var(--color-white)" alignment="center">
-
-            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-                <p style={{ fontSize: '1.25rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-                    BOOST AGENCY integra estrategia digital y experiencias presenciales bajo una misma dirección estratégica para construir marcas coherentes, competitivas y memorables.
-                </p>
-
+        <Section id="beyond-marketing" title="Beyond Marketing" bgColor="var(--color-secondary)" textColor="var(--color-black)" alignment="center">
+            <div style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem 0' }}>
                 <h3 style={{
-                    fontSize: '2rem',
+                    fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                     fontFamily: 'var(--font-heading)',
-                    color: 'var(--color-highlight)',
-                    marginBottom: '4rem'
+                    color: 'var(--color-black)',
+                    marginBottom: '3rem',
+                    lineHeight: 1.2
                 }}>
-                    Convertimos posicionamiento en ventaja competitiva.
+                    We don’t focus on visibility alone. <br />
+                    We design competitive positioning.
                 </h3>
 
-                <div style={{ padding: '3rem', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '8px', textAlign: 'left' }}>
-                    <h4 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', marginBottom: '1.5rem', color: 'var(--color-secondary)' }}>
-                        Promesa de Marca
-                    </h4>
-                    <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                        BOOST AGENCY se compromete a ejecutar cada estrategia y experiencia con excelencia, precisión y visión comercial.
-                    </p>
-                    <p style={{ fontSize: '1.1rem', fontStyle: 'italic', borderLeft: '3px solid var(--color-highlight)', paddingLeft: '1rem' }}>
-                        Mantenemos estándares altos porque trabajamos con marcas que entienden que el posicionamiento es una decisión estratégica, no estética.
-                    </p>
-                </div>
-
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    style={{
+                        fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
+                        lineHeight: 1.6,
+                        color: 'var(--color-accent)',
+                        maxWidth: '800px',
+                        margin: '0 auto'
+                    }}
+                >
+                    Boost integrates strategy, branding and experiences to transform how brands are perceived, experienced and remembered.
+                </motion.p>
             </div>
-
         </Section>
     );
 };

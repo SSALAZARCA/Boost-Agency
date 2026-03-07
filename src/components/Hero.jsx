@@ -81,7 +81,7 @@ const Hero = () => {
                         fontFamily: 'var(--font-heading)',
                         color: 'var(--color-highlight)',
                         lineHeight: 0.85,
-                        marginBottom: 'clamp(4rem, 10vh, 8rem)', // Gran margen inferior para la 'g' y 'y'
+                        marginBottom: '0',
                         letterSpacing: '-0.04em',
                         textShadow: '0 10px 40px rgba(0,0,0,0.5)',
                         fontWeight: 700,
@@ -89,7 +89,17 @@ const Hero = () => {
                 >
                     <span style={{ display: 'block' }}>
                         {'Boost'.split('').map((char, i) => (
-                            <motion.span key={i} variants={titleVariants} style={{ display: 'inline-block' }}>{char}</motion.span>
+                            <motion.span
+                                key={i}
+                                variants={titleVariants}
+                                style={{
+                                    display: 'inline-block',
+                                    marginRight: (i <= 2) ? '-0.045em' : '0',
+                                    fontWeight: 400
+                                }}
+                            >
+                                {char}
+                            </motion.span>
                         ))}
                     </span>
                     <span style={{
@@ -110,21 +120,21 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 1 }}
                     style={{
-                        maxWidth: '800px',
+                        maxWidth: '700px',
                         margin: '0 auto',
                         textAlign: 'center',
                         zIndex: 2,
-                        marginTop: 'clamp(2rem, 8vh, 5rem)'
+                        marginTop: 'clamp(2rem, 5vh, 4rem)'
                     }}
                 >
                     <h2
                         style={{
-                            fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                            fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                             fontFamily: 'var(--font-heading)',
                             color: 'white',
                             fontWeight: 700,
-                            marginBottom: '1rem',
-                            letterSpacing: '-0.02em',
+                            marginBottom: '0.5rem',
+                            letterSpacing: '-0.01em',
                             textShadow: '0 2px 10px rgba(0,0,0,0.5)',
                         }}
                     >
@@ -132,15 +142,15 @@ const Hero = () => {
                     </h2>
                     <p
                         style={{
-                            fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                            fontSize: 'clamp(0.8rem, 1vw, 1rem)',
                             fontFamily: 'var(--font-body)',
                             color: '#e0e8f0',
                             fontWeight: 400,
                             letterSpacing: '0.01em',
                             textShadow: '0 2px 10px rgba(0,0,0,0.4)',
-                            lineHeight: 1.6,
-                            margin: '0 auto 3rem auto',
-                            maxWidth: '700px'
+                            lineHeight: 1.5,
+                            margin: '0 auto 2rem auto',
+                            maxWidth: '600px'
                         }}
                     >
                         Strategic branding and brand experience agency integrating positioning, marketing and execution under one unified direction.
@@ -148,10 +158,10 @@ const Hero = () => {
 
                     <HashLink
                         smooth
-                        to="/#contacto"
+                        to="/#contact"
                         style={{
-                            padding: '1.2rem 3.5rem',
-                            fontSize: '1.1rem',
+                            padding: '0.8rem 2rem',
+                            fontSize: '0.85rem',
                             background: 'var(--color-highlight)',
                             color: 'var(--color-black)',
                             borderRadius: '50px',

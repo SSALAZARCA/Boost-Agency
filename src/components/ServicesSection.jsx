@@ -60,9 +60,10 @@ const ServiceCard = ({ title, items, delay }) => {
                 <h4 style={{
                     fontSize: '1.5rem',
                     marginBottom: '2rem',
-                    color: 'var(--color-primary)',
+                    color: 'var(--color-black)',
                     fontFamily: 'var(--font-heading)',
-                    borderBottom: '2px solid var(--color-accent)',
+                    fontStretch: 'var(--font-heading-stretch)',
+                    borderBottom: '2px solid rgba(14, 40, 65, 0.1)',
                     paddingBottom: '0.5rem',
                     display: 'inline-block'
                 }}>
@@ -83,19 +84,19 @@ const ServiceCard = ({ title, items, delay }) => {
 
 const ServicesSection = () => {
     const marketingServices = [
-        "Gestión de redes sociales", "Estrategia digital", "Creación de contenido",
-        "Producción audiovisual", "Pauta digital", "Branding e identidad", "Desarrollo web"
+        "Strategic Marketing", "Brand Strategy", "Digital Ecosystems",
+        "Content Direction", "Brand Identity", "Web & Digital Platforms", "Performance Strategy"
     ];
 
     const experienceServices = [
-        "Eventos corporativos", "Lanzamientos de producto", "Activaciones de marca",
-        "PR events", "Experiencias con influencers", "Producción integral de eventos"
+        "Brand Experiences", "Brand Activations", "Corporate Events",
+        "Product Launches", "Influencer Experiences", "PR Experiences", "Full Event Production"
     ];
 
     return (
-        <Section id="servicios" title="Estructura de Servicios" bgColor="var(--color-secondary)" alignment="center">
+        <Section id="capabilities" title="Our Capabilities" bgColor="var(--color-secondary)" alignment="center">
             <p style={{ maxWidth: '800px', margin: '0 auto 4rem auto', textAlign: 'center', fontSize: '1.2rem', color: 'var(--color-accent)' }}>
-                BOOST AGENCY integra estrategia digital y experiencias presenciales bajo una misma dirección estratégica.
+                We operate across strategy, marketing and experiential brand building.
             </p>
 
             <div style={{
@@ -105,13 +106,9 @@ const ServicesSection = () => {
                 width: '100%',
                 perspective: '1000px'
             }}>
-                <ServiceCard title="Marketing Estratégico" items={marketingServices} delay={0.1} />
-                <ServiceCard title="Experiencias de Marca" items={experienceServices} delay={0.3} />
+                <ServiceCard title="Strategic Marketing" items={marketingServices} delay={0.1} />
+                <ServiceCard title="Brand Experiences" items={experienceServices} delay={0.3} />
             </div>
-
-            <p style={{ marginTop: '4rem', textAlign: 'center', fontWeight: 600, color: 'var(--color-primary)', fontSize: '1.1rem' }}>
-                Ambas líneas trabajan de forma integrada para generar coherencia y posicionamiento sólido.
-            </p>
         </Section>
     );
 };

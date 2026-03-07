@@ -23,6 +23,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiesPolicy from './pages/CookiesPolicy';
 import ProjectsPage from './pages/ProjectsPage';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   return (
@@ -38,13 +39,13 @@ function App() {
                 <main>
                   <Hero />
                   <AboutSection />
-                  <ServicesSection />
-                  <MisionVisionSection />
-                  <PortfolioSection />
-                  <AudienceSection />
                   <IdentitySection />
-                  <PromiseSection />
+                  <ServicesSection />
                   <MethodologySection />
+                  <PromiseSection />
+                  <MisionVisionSection />
+                  <AudienceSection />
+                  <PortfolioSection />
                   <ContactSection />
                 </main>
                 <Footer />
@@ -58,16 +59,17 @@ function App() {
             <Route path="/portfolio/:id" element={<CaseStudyDetail />} />
 
             {/* All Projects Page */}
-            <Route path="/proyectos" element={<ProjectsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
 
             {/* Legal Routes */}
-            <Route path="/privacidad" element={<PrivacyPolicy />} />
-            <Route path="/terminos" element={<TermsConditions />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsConditions />} />
             <Route path="/cookies" element={<CookiesPolicy />} />
 
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CookieConsent />
         </div>
       </Router>
     </SiteProvider>
