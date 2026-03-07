@@ -25,7 +25,7 @@ const ProjectsPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span style={{ color: '#64ffda', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '0.9rem' }}>Our Journey</span>
+                        <span style={{ color: 'var(--color-highlight)', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '0.9rem' }}>Our Journey</span>
                         <h1 style={{
                             fontSize: 'clamp(3rem, 8vw, 5rem)',
                             fontFamily: 'var(--font-heading)',
@@ -33,9 +33,9 @@ const ProjectsPage = () => {
                             marginTop: '1rem',
                             marginBottom: '1.5rem'
                         }}>
-                            Portfolio of <span style={{ color: '#ffbd69' }}>Impact</span>
+                            Portfolio of <span style={{ color: 'var(--color-highlight)' }}>Impact</span>
                         </h1>
-                        <p style={{ color: '#8892b0', fontSize: '1.2rem', maxWidth: '700px', lineHeight: 1.6 }}>
+                        <p style={{ color: 'var(--color-secondary)', opacity: 0.8, fontSize: '1.2rem', maxWidth: '700px', lineHeight: 1.6 }}>
                             Explore our complete collection of case studies. Strategies designed for brands that don't just want to be there, but to dominate their market.
                         </p>
                     </motion.div>
@@ -52,17 +52,17 @@ const ProjectsPage = () => {
                 </div>
 
                 {/* Call to Action */}
-                <section style={{ marginTop: '10rem', textAlign: 'center', padding: '5rem', background: 'rgba(255,189,105,0.03)', borderRadius: '32px' }}>
-                    <h2 style={{ fontSize: '2.5rem', color: 'white', marginBottom: '1.5rem' }}>Is your brand next?</h2>
-                    <p style={{ color: '#8892b0', marginBottom: '3rem', fontSize: '1.1rem' }}>Let's design the path to your next level of success.</p>
+                <section style={{ marginTop: '10rem', textAlign: 'center', padding: '5rem', background: 'rgba(253,253,136,0.03)', borderRadius: '32px', border: '1px solid rgba(253,253,136,0.1)' }}>
+                    <h2 style={{ fontSize: '2.5rem', color: 'var(--color-secondary)', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>Is your brand next?</h2>
+                    <p style={{ color: 'var(--color-secondary)', opacity: 0.7, marginBottom: '3rem', fontSize: '1.1rem' }}>Let's design the path to your next level of success.</p>
                     <HashLink
                         smooth
                         to="/#contact"
                         style={{
                             display: 'inline-block',
                             padding: '1.2rem 4rem',
-                            background: '#64ffda',
-                            color: '#0a192f',
+                            background: 'var(--color-highlight)',
+                            color: 'var(--color-black)',
                             borderRadius: '50px',
                             fontWeight: 'bold',
                             textDecoration: 'none',

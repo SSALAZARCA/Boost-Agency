@@ -30,7 +30,7 @@ const CaseStudy = ({ project, delay }) => {
                 <div style={{
                     position: 'absolute',
                     inset: 0,
-                    backgroundImage: `linear-gradient(rgba(10,25,47,0.1), rgba(10,25,47,0.9)), url("${project.imageUrl || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'}")`,
+                    backgroundImage: `linear-gradient(rgba(14,40,65,0.1), rgba(14,40,65,0.9)), url("${project.imageUrl || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'}")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     transition: 'transform 0.5s ease'
@@ -47,7 +47,7 @@ const CaseStudy = ({ project, delay }) => {
                     zIndex: 2
                 }}>
                     <span style={{
-                        color: '#64ffda',
+                        color: 'var(--color-highlight)',
                         fontSize: '0.8rem',
                         textTransform: 'uppercase',
                         letterSpacing: '2px',
@@ -58,7 +58,7 @@ const CaseStudy = ({ project, delay }) => {
                     <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)', color: 'white' }}>{project.title}</h3>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#ffbd69' }}>{project.metric}</div>
+                        <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--color-highlight)' }}>{project.metric}</div>
                         <div style={{ fontSize: '0.8rem', color: '#fff', opacity: 0.8, textTransform: 'uppercase', lineHeight: 1.2, letterSpacing: '1px' }}>{project.metricLabel}</div>
                     </div>
                 </div>
