@@ -105,30 +105,46 @@ const Hero = () => {
                     </span>
                 </motion.h1>
 
-                <motion.p
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 1 }}
                     style={{
-                        fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-                        fontFamily: 'var(--font-body)',
-                        color: '#e0e8f0',
-                        maxWidth: '600px',
+                        maxWidth: '800px',
                         margin: '0 auto',
-                        fontWeight: 400,
-                        letterSpacing: '0.02em',
-                        textShadow: '0 2px 10px rgba(0,0,0,0.4)',
+                        textAlign: 'center',
+                        zIndex: 2,
                     }}
                 >
-                    Estrategia, concepto e impacto. Diseñamos posicionamiento para marcas que compiten a un nivel superior.
-                </motion.p>
+                    <h2
+                        style={{
+                            fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                            fontFamily: 'var(--font-heading)',
+                            color: 'white',
+                            fontWeight: 700,
+                            marginBottom: '1rem',
+                            letterSpacing: '-0.02em',
+                            textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                        }}
+                    >
+                        We build brands that compete at a higher level.
+                    </h2>
+                    <p
+                        style={{
+                            fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                            fontFamily: 'var(--font-body)',
+                            color: '#e0e8f0',
+                            fontWeight: 400,
+                            letterSpacing: '0.01em',
+                            textShadow: '0 2px 10px rgba(0,0,0,0.4)',
+                            lineHeight: 1.6,
+                            margin: '0 auto 3rem auto',
+                            maxWidth: '700px'
+                        }}
+                    >
+                        Strategic branding and brand experience agency integrating positioning, marketing and execution under one unified direction.
+                    </p>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.5, duration: 1 }}
-                    style={{ marginTop: '3rem' }}
-                >
                     <HashLink
                         smooth
                         to="/#contacto"
@@ -147,7 +163,7 @@ const Hero = () => {
                             transition: 'all 0.3s ease',
                         }}
                     >
-                        Contactar Ahora
+                        Start a Project
                     </HashLink>
                 </motion.div>
             </div>
